@@ -53,4 +53,3 @@ class SimulatedAnnealing:
             self.T *= self.alpha 
         open_list.append((current_state, heuristic(current_state, self.target),"Stuck"))
         return open_list, len(open_list), step
-

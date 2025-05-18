@@ -8,39 +8,43 @@ class BeamSearch:
     def __init__(self, state, target):
         self.state = state
         self.target = target 
-        self.beam_width = 2
-    def get_adj_node(self, state):
-        list_adj_node = []
-        x, y = get_pos(state, 0)
-        directions = {"Up": (-1,0), "Down": (1,0), "Left": (0,-1), "Right" : (0,1)}
-        
-        for move, (dx, dy) in directions.items():
-            nx, ny = x + dx, y + dy 
-            if 0 <= nx < 3 and 0 <= ny <3:
-                new_state = [row[:] for row in state]
-                new_state[x][y], new_state[nx][ny] = new_state[nx][ny], new_state[x][y]
-                list_adj_node.append((new_state, move, heuristic(new_state, self.target)))
-        
-        return list_adj_node  
+        self.beam_width = 5
+        self.visited = set() 
     
     def beam_search(self):  
-        open_list = [(self.state, heuristic(self.state, self.target), "Start")]
+        if not is_solvable(self.state, self.target):
+            print("BeamSearch: Initial state not solvable")
+            return [], 0, 0
+        
+        open_list = [(heuristic(self.state, self.target), self.state, "Start", [(self.state, heuristic(self.state, self.target), "Start")])]
+        self.visited.add(tuple(map(tuple, self.state)))
         step = 0
-
-        while True:
+        max_steps = 10000
+        
+        while open_list and step < max_steps:
             step += 1
-            for state, h, move in open_list:
-                if state == self.target:
-                    return open_list + [(state, h, "Goal")], len(open_list), step
-
             next_states = []
-            for state, h, move in open_list:
-                neighbors = self.get_adj_node(state)
-                for new_state, new_h, new_move in neighbors:
-                    heapq.heappush(next_states,(new_state, new_h, new_move))
+            for h, state, move, path in open_list:
+                if state == self.target:
+                    return path + [(state, heuristic(state, self.target), "Goal")], len(path), step
+
+                for new_state, new_move in get_adj_node(state):
+                    state_tuple = tuple(map(tuple, new_state))
+                    if state_tuple not in self.visited:
+                        self.visited.add(state_tuple)
+                        new_h = heuristic(new_state, self.target)
+                        new_path = path + [(new_state, new_h, new_move)]
+                        heapq.heappush(next_states, (new_h, new_state, new_move, new_path))
+            
             open_list = heapq.nsmallest(self.beam_width, next_states)
          
-        return open_list, len(open_list), step  
+        print("BeamSearch: No solution found")
+        return [], 0, step
+
+    
+        
+        
+        
                     
 
 
