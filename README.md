@@ -431,7 +431,9 @@ Nhận xét trên 8-puzzle
 •	Hiệu quả: Không phải lựa chọn tốt cho 8-puzzle trong môi trường quan sát một phần do phức tạp và thiếu heuristic.
 •	Thực tiễn: Ít áp dụng, vì 8-puzzle thường giả định quan sát đầy đủ; A* hoặc Belief State Search phù hợp hơn.
 •	Hạn chế: Phù hợp hơn cho bài toán có cấu trúc quan sát một phần rõ ràng (như robot với cảm biến hạn chế).
-
+```
+![partialbfs](https://github.com/user-attachments/assets/d63403aa-ca71-490c-bde3-c641316a3fea)
+```
 2.3.3.Unknown Environmen (Môi trường ẩn với thuật toán BFS):
 Mô tả
 •	Cơ chế hoạt động: 
@@ -473,6 +475,9 @@ Nhận xét trên 8-puzzle
 •	Hiệu quả: Không phải lựa chọn tốt cho 8-puzzle trong môi trường ẩn do phức tạp và thiếu heuristic.
 •	Thực tiễn: Ít áp dụng, vì 8-puzzle thường giả định biết quy tắc; A* hoặc Q-Learning phù hợp hơn.
 •	Hạn chế: Phù hợp hơn cho bài toán với môi trường thực sự ẩn (như điều hướng robot).
+```
+![beliefstatebfs](https://github.com/user-attachments/assets/6828e049-dc52-49ad-b2a0-7320f566d34a)
+```
 
 2.4.Tìm kiếm trong môi trường có ràng buộc (áp dụng trên Sudoku)
 2.4.1.Backtracking Search
@@ -519,6 +524,10 @@ Nhận xét trên 8-puzzle
 •	Hiệu quả: Không phải lựa chọn tốt cho 8-puzzle do mô hình CSP phức tạp và không tối ưu.
 •	Thực tiễn: Ít áp dụng, A* hoặc IDA* hiệu quả hơn nhiều.
 •	Hạn chế: Phù hợp hơn cho bài toán CSP rõ ràng như Sudoku.
+```
+![backtracking](https://github.com/user-attachments/assets/cf5320cf-17d3-40eb-b2d4-cfc18850d13f)
+```
+
 2.4.2.Forward Checking:
 Mô tả
 •	Cơ chế hoạt động: 
@@ -564,6 +573,9 @@ Nhận xét trên 8-puzzle
 •	Hiệu quả: Không phải lựa chọn tốt cho 8-puzzle do mô hình CSP phức tạp và không tối ưu.
 •	Thực tiễn: Ít áp dụng, A* hoặc IDA* vượt trội hơn.
 •	Hạn chế: Phù hợp hơn cho bài toán CSP rõ ràng như Sudoku.
+```
+![dfsfc](https://github.com/user-attachments/assets/21458673-da06-45ad-acf2-c56168e7f234)
+```
 
 2.4.3.AC-3 (Arc Consistency):
 Mô tả
@@ -611,10 +623,12 @@ Nhận xét trên 8-puzzle
 •	Hiệu quả: Không phải lựa chọn tốt cho 8-puzzle do mô hình CSP phức tạp và không tối ưu.
 •	Thực tiễn: Ít áp dụng, A* hoặc IDA* vượt trội hơn.
 •	Hạn chế: Phù hợp hơn cho bài toán CSP rõ ràng như Sudoku.
+```
+![dfsac3](https://github.com/user-attachments/assets/ebe53b93-248f-47c5-9ce7-6617f2578db7)
+```
 
 2.5. Tìm kiếm cục bộ
 2.5.1.Beam Search
-
 Mô tả
 •	Cơ chế hoạt động: 
 o	Beam Search là thuật toán tìm kiếm cục bộ (local search), kết hợp ý tưởng của Breadth-First Search (BFS) và tìm kiếm heuristic, nhưng chỉ giữ một số lượng giới hạn (beam width) các trạng thái tốt nhất ở mỗi mức.
@@ -658,7 +672,9 @@ Nhận xét trên 8-puzzle
 •	Hiệu quả: Phù hợp khi ưu tiên tốc độ và chấp nhận lời giải không tối ưu.
 •	Thực tiễn: Ít áp dụng cho 8-puzzle, vì A* hoặc IDA* hiệu quả hơn.
 •	Hạn chế: Nguy cơ bỏ lỡ lời giải nếu beam width không phù hợp.
-
+```
+![beamsearch](https://github.com/user-attachments/assets/34313cbf-e7dd-497d-a4c7-b51bf8f311ee)
+```
 2.5.2	Simple Hill Climbing (HC):
 Mô tả
 •	Cơ chế hoạt động: 
@@ -700,7 +716,9 @@ Nhận xét trên 8-puzzle
 •	Hiệu quả: Phù hợp khi ưu tiên tốc độ và chấp nhận lời giải không tối ưu, nhưng hiếm khi đạt mục tiêu.
 •	Thực tiễn: Ít áp dụng cho 8-puzzle, vì A* hoặc IDA* vượt trội hơn.
 •	Hạn chế: Dễ kẹt ở cực đại cục bộ, không lý tưởng cho không gian trạng thái phức tạp.
-
+```
+![shc](https://github.com/user-attachments/assets/1bc80d35-1ae7-47f5-9ba1-26e79bd97167)
+```
 2.5.3.Stochastic Hill Climbing (SHC):
 Mô tả
 •	Cơ chế hoạt động: 
@@ -742,7 +760,9 @@ Nhận xét trên 8-puzzle
 •	Hiệu quả: Phù hợp khi ưu tiên tốc độ và chấp nhận lời giải không tối ưu, nhưng hiếm khi đạt mục tiêu.
 •	Thực tiễn: Ít áp dụng cho 8-puzzle, vì A* hoặc IDA* vượt trội hơn.
 •	Hạn chế: Vẫn dễ kẹt ở cực đại cục bộ, không lý tưởng cho không gian trạng thái phức tạp.
-
+```
+![stochatichc](https://github.com/user-attachments/assets/b5f1ec17-f862-479e-b6d6-55cf7b61729c)
+```
 2.5.4.Simulated Annealing (SA):
 Mô tả
 •	Cơ chế hoạt động: 
@@ -784,7 +804,9 @@ Nhận xét trên 8-puzzle
 •	Hiệu quả: Phù hợp khi ưu tiên tốc độ và chấp nhận lời giải không tối ưu, nhưng hiếm khi đạt mục tiêu.
 •	Thực tiễn: Ít áp dụng cho 8-puzzle, vì A* hoặc IDA* vượt trội hơn.
 •	Hạn chế: Vẫn dễ kẹt ở cực đại cục bộ, không lý tưởng cho không gian trạng thái phức tạp.
-
+```
+![simulateanneling](https://github.com/user-attachments/assets/09700b48-6b40-48c7-a77e-e3ea2c165173)
+```
 2.5.5. Genetic Algorithms
 Mô tả
 •	Cơ chế hoạt động: 
@@ -830,7 +852,9 @@ Nhận xét trên 8-puzzle
 •	Hiệu quả: Phù hợp khi cần khám phá toàn cục và chấp nhận lời giải không tối ưu.
 •	Thực tiễn: Ít áp dụng cho 8-puzzle, vì A* hoặc IDA* vượt trội hơn.
 •	Hạn chế: Phụ thuộc vào tham số, không lý tưởng cho không gian trạng thái nhỏ như 8-puzzle.
-
+```
+![geneticalgorithms](https://github.com/user-attachments/assets/8c9a9835-71ba-4396-9f51-699ecfd9f83a)
+```
 2.6. Reinforcement Learning (Q-Learning)
 Mô tả
 •	Cơ chế hoạt động: 
@@ -841,9 +865,7 @@ o	Với 8-puzzle:
 	Hành động: Di chuyển ô trống (lên, xuống, trái, phải).
 	Phần thưởng: Thường là -1 cho mỗi bước di chuyển, +100 nếu đạt mục tiêu ([[1,2,3], [4,5,6], [7,8,0]]).
 	Hàm giá trị Q: Ước lượng phần thưởng dài hạn cho mỗi cặp trạng thái-hành động.
-o	Q-Learning cập nhật bảng Q dựa trên công thức:
-<math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>a</mi><mo stretchy="false">)</mo><mo>←</mo><mi>Q</mi><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>a</mi><mo stretchy="false">)</mo><mo>+</mo><mi>α</mi><mo stretchy="false">[</mo><mi>r</mi><mo>+</mo><mi>γ</mi><mi>max</mi><mo>⁡</mo><mi>Q</mi><mo stretchy="false">(</mo><msup><mi>s</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo separator="true">,</mo><msup><mi>a</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mo>−</mo><mi>Q</mi><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>a</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max Q(s', a') - Q(s, a)] </annotation></semantics></math>Q(s,a)←Q(s,a)+α[r+γmaxQ(s′,a′)−Q(s,a)],
-với <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math>s là trạng thái hiện tại, <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math>a là hành động, <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math>r là phần thưởng, <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>s</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></mrow><annotation encoding="application/x-tex">s'</annotation></semantics></math>s′ là trạng thái tiếp theo, <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>α là tốc độ học, <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math>γ là hệ số chiết khấu.
+o	Q-Learning cập nhật bảng Q dựa trên công thức
 o	Quy trình: 
 1.	Khởi tạo bảng Q với giá trị ngẫu nhiên hoặc 0.
 2.	Lặp lại qua nhiều tập (episode): 
@@ -861,7 +883,7 @@ o	Đặc điểm: RL (Q-Learning) học chính sách tối ưu qua thử nghiệ
 Nhược điểm
 •	Không tối ưu nhanh: Cần nhiều tập để học chính sách tốt trong 8-puzzle, chậm hơn A*.
 •	Không hoàn chỉnh: Có thể không tìm được mục tiêu nếu không đủ tập hoặc tham số không tối ưu.
-•	Phụ thuộc tham số: Hiệu suất phụ thuộc vào tốc độ học (<math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>α), hệ số chiết khấu (<math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math>γ), và chính sách khám phá (<math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>ϵ).
+•	Phụ thuộc tham số: Hiệu suất phụ thuộc vào tốc độ học , hệ số chiết khấu, và chính sách khám phá.
 •	Hạn chế: Kém hơn A* hoặc IDA* trong 8-puzzle do không gian trạng thái lớn (~362,880 trạng thái) và không sử dụng heuristic trực tiếp.
 Chi tiết bổ sung
 •	Thời gian: O(n), với n là số tập, phụ thuộc vào số trạng thái và hành động.
@@ -876,7 +898,50 @@ o	Greedy/A*/IDA*: Hiệu quả hơn, tối ưu.
 •	Hiệu suất: Linh hoạt nhưng chậm trong 8-puzzle so với Informed Search.
 Nhận xét trên 8-puzzle
 •	Hiệu quả: Phù hợp khi cần học chính sách trong môi trường không rõ, nhưng không hiệu quả bằng A*.
-
 ```
+![rl](https://github.com/user-attachments/assets/5c91b4a7-8b2d-4f30-9b3d-639d24435a77)
+```
+Khi bấm nút compare, sẽ thấy biểu đồ cột thể hiện về memory và bấm vào time sẽ xuất biểu đồ cột theo thời gian.
+```
+![Screenshot 2025-05-18 094908](https://github.com/user-attachments/assets/14e0429c-0495-430a-b0cd-d282fdf16a79)
+```
+Hiệu quả cao: Thuật toán như Greedy Search, IDA*, Beam Search, và A Start* cho thấy thời gian thấp, phù hợp khi ưu tiên tốc độ, nhưng không phải lúc nào cũng tối ưu (trừ A*).
+Hiệu quả tối ưu: BFS, UCS, và IDS đảm bảo đường đi ngắn nhất, nhưng tốn thời gian do khám phá nhiều trạng thái.
+Học và tiến hóa: RL và Genetic Algorithms tiêu tốn thời gian hơn do học qua nhiều tập hoặc thế hệ, không lý tưởng cho 8-puzzle.
+Tìm kiếm cục bộ: Simulated Annealing và SHC có thời gian trung bình, tốt hơn Simple Hill Climbing nhưng vẫn phụ thuộc tham số.
+Phù hợp với 8-puzzle: A* (nếu A* Start là bước khởi đầu của A*) và IDA* nổi bật nhờ kết hợp heuristic và hiệu suất, vượt trội hơn các thuật toán uninformed (BFS, UCS, IDS) hoặc học (RL, GA).
 •	Thực tiễn: Ít áp dụng cho 8-puzzle, vì A* hoặc IDA* vượt trội hơn.
 •	Hạn chế: Yêu cầu nhiều tập học, không lý tưởng cho không gian trạng thái nhỏ như 8-puzzle.
+```
+![Screenshot 2025-05-18 094737](https://github.com/user-attachments/assets/7deac620-9fa2-48f6-ab86-77653f8d6ca6)
+```
+•  Informed Search (A, IDA, Greedy Search):** Vượt trội trong 8-puzzle nhờ heuristic (Manhattan Distance), trong đó A* và IDA* là lựa chọn tối ưu nhất về hiệu suất và độ tin cậy. 
+•  Uninformed Search (BFS, UCS, IDS, DFS): BFS, UCS, IDS đảm bảo tối ưu nhưng chậm và tốn tài nguyên; DFS nhanh nhưng không tối ưu. 
+•  Local Search (Beam Search, Hill Climbing, Simulated Annealing): Nhanh, tiết kiệm tài nguyên, nhưng không tối ưu và dễ bỏ lỡ mục tiêu. 
+•  Learning-Based (RL, Genetic Algorithms): Phù hợp cho bài toán học dài hạn, nhưng không hiệu quả cho 8-puzzle do không gian trạng thái nhỏ. 
+•  Specialized Search (AND-OR, Partially Observable/Unknown Environment): Không tự nhiên cho 8-puzzle, chậm và phức tạp. 
+•  CSP (Backtracking, Forward Checking, AC-3): Phù hợp hơn cho bài toán như Sudoku, không hiệu quả khi áp dụng cho 8-puzzle.
+	
+Kết luận
+•	Lựa chọn tốt nhất cho 8-puzzle: A* (hiệu suất tốt, tối ưu) hoặc IDA* (tiết kiệm tài nguyên, tối ưu).
+•	Khi ưu tiên tốc độ: Greedy Search hoặc Beam Search.
+•	Khi cần tối ưu mà không có heuristic: IDS (tiết kiệm tài nguyên hơn BFS/UCS).
+•	Không khuyến nghị: RL, Genetic Algorithms, AND-OR Search, và CSP-based (Backtracking, Forward Checking, AC-3) do không phù hợp hoặc quá phức tạp.
+3.Kết quả đạt được khi thực hiện project
+3.1.Xây dựng và so sánh hiệu quả của các thuật toán tìm kiếm: 
+o	Project đã triển khai thành công nhiều thuật toán tìm kiếm, bao gồm cả Uninformed Search (BFS, DFS, UCS, IDS) và Informed Search (Greedy Search, A*, IDA*), cùng với các phương pháp Local Search (Beam Search, Hill Climbing, Stochastic Hill Climbing, Simulated Annealing) và Learning-Based (Genetic Algorithms, Reinforcement Learning). Mỗi thuật toán được áp dụng và đánh giá trên bài toán 8-puzzle, giúp hiểu rõ cách chúng hoạt động trong không gian trạng thái hữu hạn (~362,880 trạng thái).
+o	Kết quả so sánh cho thấy sự khác biệt rõ rệt về hiệu suất, từ đó xác định được thuật toán nào phù hợp nhất với từng yêu cầu (tối ưu, tốc độ, hoặc tiết kiệm tài nguyên).
+3.2.Phát triển mô hình hóa bài toán 8-puzzle: 
+o	Dự án đã mô hình hóa 8-puzzle như một bài toán tìm kiếm trạng thái, với trạng thái ban đầu và mục tiêu được biểu diễn dưới dạng bảng 3x3. Các hành động (di chuyển ô trống lên, xuống, trái, phải) và hàm heuristic (như Manhattan Distance) được tích hợp, cho phép áp dụng các thuật toán một cách hiệu quả.
+o	Ngoài ra, một số phương pháp như AND-OR Search, Backtracking, Forward Checking, và AC-3 đã được thử nghiệm để mô phỏng 8-puzzle như bài toán CSP, mặc dù không tối ưu, vẫn mang lại hiểu biết về tính linh hoạt của các phương pháp.
+3.3.Tích hợp công cụ trực quan hóa: 
+o	Project đã thành công trong việc tạo ra các hình ảnh động (GIF) bằng Pygame, minh họa quá trình hoạt động của từng thuật toán trên 8-puzzle (ví dụ: BFS duyệt theo mức, A* chọn trạng thái theo f(n), Simulated Annealing chấp nhận trạng thái xấu). Điều này giúp trực quan hóa cách các thuật toán khám phá không gian trạng thái.
+o	Biểu đồ so sánh thời gian và tài nguyên sử dụng (dựa trên dữ liệu giả định từ hình ảnh) đã được xây dựng bằng Matplotlib, cung cấp cái nhìn tổng quan về hiệu suất của từng phương pháp.
+3.4.Đánh giá và rút ra bài học: 
+o	Kết quả cho thấy A* và IDA* là các thuật toán hiệu quả nhất cho 8-puzzle, cân bằng giữa tính tối ưu (đường đi ngắn nhất) và hiệu suất, nhờ sử dụng heuristic như Manhattan Distance. Điều này xác nhận vai trò quan trọng của thông tin trong tìm kiếm.
+o	Các phương pháp Local Search (như Greedy Search, Beam Search) phù hợp khi ưu tiên tốc độ, trong khi Uninformed Search (BFS, UCS, IDS) tốt hơn khi không có heuristic. Ngược lại, các phương pháp học (RL, Genetic Algorithms) và CSP (Backtracking, AC-3) ít hiệu quả do không gian trạng thái nhỏ và cấu trúc không phù hợp.
+o	Dự án cũng chỉ ra hạn chế của một số thuật toán (như DFS dễ kẹt nhánh sâu, UCS tốn tài nguyên) và gợi ý cải tiến, chẳng hạn kết hợp heuristic hoặc tối ưu hóa tham số.
+3.5.Ứng dụng thực tiễn và mở rộng: 
+o	Thành quả của project có thể được áp dụng để giải các bài toán tìm đường hoặc tối ưu hóa tương tự (như 15-puzzle, Sudoku. Các GIF và biểu đồ cũng hỗ trợ giảng dạy hoặc trình bày về các thuật toán tìm kiếm.
+o	Dự án mở ra hướng nghiên cứu thêm, như cải tiến heuristic, áp dụng cho môi trường quan sát một phần, hoặc tích hợp học sâu (Deep RL) để xử lý không gian trạng thái lớn hơn.
+
